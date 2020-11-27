@@ -1,7 +1,20 @@
 # vim-scdoc-snippets
-Vim snippets for scdoc / .schelp files for SuperCollider.
+![scdoc snips in action](/assets/scdoc-snips.gif)
 
-Formatted for [UltiSnips](https://github.com/SirVer/ultisnips).
+Vim snippets for scdoc / .schelp files for SuperCollider for [UltiSnips](https://github.com/SirVer/ultisnips).
+
+These snippets cover all tags described by [the SuperCollider scdoc syntax for writing help files](http://doc.sccode.org/Reference/SCDocSyntax.html).
+
+## Requirements
+* Python 3
+* [UltiSnips](https://github.com/SirVer/ultisnips)
+* [SuperCollider](https://github.com/supercollider/supercollider)
+
+## Install
+To install using vim-plug
+1. Add this to your init.vim / .vimrc:
+`Plug 'madskjeldgaard/vim-scdoc-snippets'`
+2. Open Vim and run the command `:PlugInstall`
 
 # See also
 
