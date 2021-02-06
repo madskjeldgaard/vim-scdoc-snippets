@@ -7,7 +7,7 @@ These snippets cover all tags described by [the SuperCollider scdoc syntax for w
 
 ## Requirements
 * Python 3
-* [UltiSnips](https://github.com/SirVer/ultisnips)
+* [UltiSnips](https://github.com/SirVer/ultisnips) or [snippets.nvim](https://github.com/norcalli/snippets.nvim)
 * [SuperCollider](https://github.com/supercollider/supercollider)
 
 ## Install
@@ -15,6 +15,14 @@ To install using vim-plug
 1. Add this to your init.vim / .vimrc:
 `Plug 'madskjeldgaard/vim-scdoc-snippets'`
 2. Open Vim and run the command `:PlugInstall`
+
+If you use snippets.nvim, you may add these snippets like so:
+
+```lua
+require'snippets'.snippets = {
+	scdoc = require'scdoc-snippets';
+}
+```
 
 # See also
 
