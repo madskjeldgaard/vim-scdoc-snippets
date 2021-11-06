@@ -1,14 +1,12 @@
 # vim-scdoc-snippets
 ![scdoc snips in action](/assets/scdoc-snips.gif)
 
-Vim snippets for scdoc / .schelp files for SuperCollider for [UltiSnips](https://github.com/SirVer/ultisnips).
+Vim snippets for scdoc / .schelp files for SuperCollider for [UltiSnips](https://github.com/SirVer/ultisnips), [snippets.nvim](https://github.com/norcalli/snippets.nvim) or [LuaSnip](https://github.com/L3MON4D3/LuaSnip).
 
 These snippets cover all tags described by [the SuperCollider scdoc syntax for writing help files](http://doc.sccode.org/Reference/SCDocSyntax.html).
 
 ## Requirements
-* Python 3
-* [UltiSnips](https://github.com/SirVer/ultisnips) or [snippets.nvim](https://github.com/norcalli/snippets.nvim)
-* [SuperCollider](https://github.com/supercollider/supercollider)
+* [UltiSnips](https://github.com/SirVer/ultisnips), [snippets.nvim](https://github.com/norcalli/snippets.nvim) or [LuaSnip](https://github.com/L3MON4D3/LuaSnip).
 
 ## Install
 To install using vim-plug
@@ -16,6 +14,8 @@ To install using vim-plug
 `Plug 'madskjeldgaard/vim-scdoc-snippets'`
 2. Open Vim and run the command `:PlugInstall`
 
+
+### Snippets.nvim
 If you use snippets.nvim, you may add these snippets like so:
 
 ```lua
@@ -23,6 +23,25 @@ require'snippets'.snippets = {
 	scdoc = require'scdoc-snippets';
 }
 ```
+
+### Luasnip
+
+To use these snippets with LuaSnip, you need to parse them to the LuaSnip format first. Add this to your snippets file for LuaSnip to do so:
+```lua
+local ls = require'luasnip'
+
+-- Parse scdoc snippets to luasnip format
+local scdocsnips = {}
+for snipName, snipContents in pairs(require'scdoc-snippets') do
+
+	local parsedSnip = ls.parser.parse_snippet({ trig = snipName }, snipContents)
+	table.insert(scdocsnips, parsedSnip)
+	-- print(value)
+end
+
+require'luasnip'.snippets.scdoc = scdocsnips
+```
+
 
 # See also
 
